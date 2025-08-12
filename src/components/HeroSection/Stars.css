@@ -1,0 +1,49 @@
+/* Base stars layer */
+.stars, .stars2, .stars3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-repeat: repeat;
+  z-index: 1;
+}
+
+/* First layer: small dense stars */
+.stars {
+  background-image: radial-gradient(2px 2px at 20px 30px, white, transparent),
+                    radial-gradient(1px 1px at 40px 70px, white, transparent),
+                    radial-gradient(2px 2px at 50px 160px, white, transparent),
+                    radial-gradient(1px 1px at 90px 40px, white, transparent);
+  animation: drift 100s linear infinite;
+}
+
+/* Second layer: medium sparse stars */
+.stars2 {
+  background-image: radial-gradient(2px 2px at 10px 20px, #fff, transparent),
+                    radial-gradient(1px 1px at 100px 80px, #fff, transparent),
+                    radial-gradient(2px 2px at 200px 150px, #fff, transparent),
+                    radial-gradient(1px 1px at 300px 40px, #fff, transparent);
+  animation: drift 150s linear infinite, twinkle 3s ease-in-out infinite;
+}
+
+/* Third layer: larger, slower stars */
+.stars3 {
+  background-image: radial-gradient(3px 3px at 15px 25px, #fff, transparent),
+                    radial-gradient(2px 2px at 250px 100px, #fff, transparent),
+                    radial-gradient(3px 3px at 400px 200px, #fff, transparent),
+                    radial-gradient(2px 2px at 600px 300px, #fff, transparent);
+  animation: drift 200s linear infinite, twinkle 4s ease-in-out infinite;
+}
+
+/* Slow diagonal drift */
+@keyframes drift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-50%, -50%); }
+}
+
+/* Twinkle effect */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
