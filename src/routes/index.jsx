@@ -9,7 +9,7 @@ const AppRoutes = () => {
       <Route path="/" element={<HeroSection />} />
       <Route path="/hero-section" element={<HeroSection />} />
       <Route path="/timeline" element={<Timeline />} />
-      <Route path="/Jellyfish" element={<Jellyfish />} />
+      <Route path="/jellyfish" element={<Jellyfish />} />
     </Routes>
   );
 };
